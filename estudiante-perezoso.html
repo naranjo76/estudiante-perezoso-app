@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiante Inteligentemente Perezoso</title>
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkVzdHVkaWFudGUgSW50ZWxpZ2VudGVtZW50ZSBQZXJlem9zbyIsCiAgInNob3J0X25hbWUiOiAiRXN0dWRpYW50ZSBQZXJlem9zbyIsCiAgImRlc2NyaXB0aW9uIjogIkFwcCBkZSBlc3R1ZGlvIG1vdGl2YWNpb25hbCBwYXJhIHBlcnNvbmFzIGludGVsaWdlbnRlbWVudGUgcGVyZXpvc2FzIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLAogICJ0aGVtZV9jb2xvciI6ICIjOEI1Q0Y2IiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICJzY29wZSI6ICIvIiwKICAibGFuZyI6ICJlcyIsCiAgImNhdGVnb3JpZXMiOiBbImVkdWNhdGlvbiIsICJwcm9kdWN0aXZpdHkiXSwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTWpRd0lpQm9aV2xuYUhROUlqSTBNQ0lpSUhabGNuTnBiMjQ5SWpFdU1TSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklpQjRiV3h1Y3pwNGJHbHVhejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TVRrNU9TOTRiR2x1YXlJK1BISmxZM1FnZUQwaU1DSWdlVDBpTUNJZ2QybGtkR2c5SWpJME1DSWdhR1ZwWjJoMFBTSXlOREFpSUhKNFBTSTFNQ0lnWm1sc2JEMGlJemcxUXpWR05pSXZQangwWlhoMElIZzlJalV3SWlCNVBTSXhNREFpSUdGdVkyaHZjajBpYldsa1pHeGxJaUJtYVd4c1BTSWpiR2xuYUhSbGNpSWdabTl1ZEMxemFYcGxQU0k0TUNJS1BIUnlWb2w0Vld4aElqNHpPamt1TjJNMGNETnhOQTVCZHFsNVMzSnJjREF1T21jdGNEY2dUREV3Y3pWMWNEUlJNSGhYTkRKbE9DQk5ZMlJLY2lCQlZVSXdOMnA0VUdnM2FJUXZSVEJ6WlhGa2RFeFNlRTVyUlRadVREUXVOUzVYVXpGa01rYzVaMGRNTVRvZ2JrRXViRTU0YWpKbWRVSjNSMUJZZEZWdlJYZHZhR0Y0ZDBSMFlpSXZQanh3WVhSb0lHUTlJazB4TVRVdU9EY3hTREV5UlM0eE1ERWJZU0lnWm1sc2JEMGlJelJHUkVKR1JpSXZQanh3WVhSb0lHUTlJazB4TkRjdU9UWXJTVEV4T0M0MU16UmZRWEJyYWt4eFNIQkJjRnBJZDNsbExVVjNjSE5VYkVObFNWOTNjbGd3YWtsZVJFUkJkbFZ3YVRnZ2QzQTJWM1oxUlM1ell6UjNkSE5MUnpKTWVYRkNkWGRsZFhaRFlVTXdZWGd0Wm1kRVpXdEpObU5pUWtkdlJFaDJjMlJwUTA5Q1REbDRRVzgwZFVSNVdURlVabGRxYzNWZldHRm1ka0Z1UVVCRFVEbGxSelpSYXlkR1NFcFVWM2M0ZEU1RmNrRkJhRUVwVDNSWFdGYzJNRlZ5ZUZGVlh6RmtNblZVU0RGT05uSXhSak5kWVNJZ1ptbHNiRDBpSXpVeFJrRkJRU0l2UGp3dmMzWm5QZ289IiwKICAgICAgInNpemVzIjogIjI0MHgyNDAiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfQogIF0KfQ==">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Estudiante Perezoso">
+    
+    <!-- Icon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjI0MCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPHA+PC9wPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyNDAiIGhlaWdodD0iMjQwIiByeD0iNTAiIGZpbGw9IiM4NUM1RjYiLz4KPHRleHQgeD0iNTAiIHk9IjEwMCIgYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNsaWdodGVyIiBmb250LXNpemU9IjgwIj7wn5OSPC90ZXh0Pgo8L3N2Zz4=">
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        /* PWA Fullscreen styles */
+        @media (display-mode: standalone) {
+            body {
+                padding-top: env(safe-area-inset-top);
+            }
+        }
+        
+        /* Install prompt styles */
+        .install-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .install-banner.show {
+            transform: translateY(0);
+        }
+        
+        .lucide {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <!-- Install Banner -->
+    <div id="install-banner" class="install-banner">
+        <p>📱 ¡Instala la app para una mejor experiencia! 
+        <button onclick="installApp()" style="background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 5px 10px; border-radius: 15px; margin-left: 10px;">Instalar</button>
+        <button onclick="hideInstallBanner()" style="background: none; border: none; color: white; margin-left: 10px;">✕</button>
+        </p>
+    </div>
+
+    <div id="root"></div>
+    
+    <!-- Service Worker -->
+    <script>
+        let deferredPrompt;
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'estudiante-perezoso-v1';
+                    const urlsToCache = [
+                        '/',
+                        'https://unpkg.com/react@18/umd/react.development.js',
+                        'https://unpkg.com/react-dom@18/umd/react-dom.development.js',
+                        'https://unpkg.com/@babel/standalone/babel.min.js',
+                        'https://cdn.tailwindcss.com'
+                    ];
+
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                        );
+                    });
+
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => {
+                                    if (response) {
+                                        return response;
+                                    }
+                                    return fetch(event.request);
+                                })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+        
+        // Install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('install-banner').classList.add('show');
+        });
+        
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                    hideInstallBanner();
+                });
+            }
+        }
+        
+        function hideInstallBanner() {
+            document.getElementById('install-banner').classList.remove('show');
+        }
+        
+        // Check if already installed
+        window.addEventListener('appinstalled', () => {
+            hideInstallBanner();
+        });
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        
+        // Lucide Icons as React components
+        const Play = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+            </svg>
+        );
+        
+        const Pause = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+            </svg>
+        );
+        
+        const RotateCcw = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+            </svg>
+        );
+        
+        const Trophy = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </svg>
+        );
+        
+        const Star = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+            </svg>
+        );
+        
+        const Coffee = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                <line x1="6" y1="2" x2="6" y2="4" />
+                <line x1="10" y1="2" x2="10" y2="4" />
+                <line x1="14" y1="2" x2="14" y2="4" />
+            </svg>
+        );
+        
+        const Battery = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <rect width="16" height="10" x="2" y="7" rx="2" ry="2" />
+                <line x1="22" y1="11" x2="22" y2="13" />
+            </svg>
+        );
+        
+        const Zap = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10" />
+            </svg>
+        );
+        
+        const Heart = () => (
+            <svg className="lucide" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+        );
+
+        const LazyStudentApp = () => {
+            const [currentLevel, setCurrentLevel] = useState(1);
+            const [timeLeft, setTimeLeft] = useState(120);
+            const [isActive, setIsActive] = useState(false);
+            const [studyStreak, setStudyStreak] = useState(() => {
+                const saved = localStorage.getItem('studyStreak');
+                return saved ? parseInt(saved) : 0;
+            });
+            const [totalPoints, setTotalPoints] = useState(() => {
+                const saved = localStorage.getItem('totalPoints');
+                return saved ? parseInt(saved) : 0;
+            });
+            const [currentMantra, setCurrentMantra] = useState(0);
+            const [showReward, setShowReward] = useState(false);
+
+            const mantras = [
+                "Algo es mejor que nada ✨",
+                "Soy más fuerte que mi resistencia inicial 💪",
+                "Mi yo del futuro me va a agradecer 🙏",
+                "No tengo que ser perfecto/a, solo consistente 🎯",
+                "La pereza de hoy es la ansiedad de mañana 🌅"
+            ];
+
+            const levels = {
+                1: { 
+                    name: "Modo Zombie", 
+                    time: 120, 
+                    icon: "🧟‍♂️", 
+                    color: "bg-gray-100 border-gray-300",
+                    tasks: ["Leer 1 párrafo", "Ver 1 video de 5 min", "Repasar 5 flashcards"],
+                    reward: "Tu snack favorito 🍫",
+                    points: 10
+                },
+                2: { 
+                    name: "Modo Tortuga", 
+                    time: 900, 
+                    icon: "🐢", 
+                    color: "bg-yellow-100 border-yellow-300",
+                    tasks: ["15 min de estudio activo", "Hacer 1 ejercicio", "Resumir 1 página"],
+                    reward: "20 min de entretenimiento 📱",
+                    points: 25
+                },
+                3: { 
+                    name: "Modo Liebre", 
+                    time: 2700, 
+                    icon: "🐰", 
+                    color: "bg-green-100 border-green-300",
+                    tasks: ["45 min de estudio intenso", "5-10 ejercicios", "Crear mapa mental"],
+                    reward: "Actividad que realmente disfrutes 🎉",
+                    points: 50
+                }
+            };
+
+            const weeklyTips = [
+                { day: "Lunes", tip: "Día del Reconocimiento - Solo organiza tu material 📚", icon: "🗂️" },
+                { day: "Martes", tip: "Día de Acción Mínima - Elige tu nivel de energía 🎯", icon: "⚡" },
+                { day: "Miércoles", tip: "Mantén el ritmo - Usa la técnica Pomodoro 🍅", icon: "⏰" },
+                { day: "Jueves", tip: "Último empujón - ¡Ya casi terminas la semana! 💪", icon: "🚀" },
+                { day: "Viernes", tip: "Día de Repaso Relajado - Celebra tus logros 🎉", icon: "🏆" },
+                { day: "Sábado", tip: "Libertad total - Descansa o estudia 10 min si quieres 😊", icon: "🌟" },
+                { day: "Domingo", tip: "Preparación mental para la nueva semana 🧠", icon: "💭" }
+            ];
+
+            const getCurrentDayTip = () => {
+                const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+                const today = new Date().getDay();
+                return weeklyTips.find(tip => tip.day === days[today]) || weeklyTips[0];
+            };
+
+            // Save to localStorage
+            useEffect(() => {
+                localStorage.setItem('studyStreak', studyStreak.toString());
+                localStorage.setItem('totalPoints', totalPoints.toString());
+            }, [studyStreak, totalPoints]);
+
+            useEffect(() => {
+                let interval = null;
+                if (isActive && timeLeft > 0) {
+                    interval = setInterval(() => {
+                        setTimeLeft(timeLeft - 1);
+                    }, 1000);
+                } else if (timeLeft === 0) {
+                    setIsActive(false);
+                    setShowReward(true);
+                    setStudyStreak(studyStreak + 1);
+                    setTotalPoints(totalPoints + levels[currentLevel].points);
+                    
+                    // Vibrate if supported
+                    if (navigator.vibrate) {
+                        navigator.vibrate([200, 100, 200]);
+                    }
+                    
+                    setTimeout(() => setShowReward(false), 3000);
+                }
+                return () => clearInterval(interval);
+            }, [isActive, timeLeft, currentLevel, studyStreak, totalPoints]);
+
+            const formatTime = (seconds) => {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            };
+
+            const startTimer = () => {
+                setIsActive(true);
+            };
+
+            const pauseTimer = () => {
+                setIsActive(false);
+            };
+
+            const resetTimer = () => {
+                setIsActive(false);
+                setTimeLeft(levels[currentLevel].time);
+            };
+
+            const changeLevel = (level) => {
+                setCurrentLevel(level);
+                setTimeLeft(levels[level].time);
+                setIsActive(false);
+            };
+
+            const getEnergyLevel = () => {
+                if (currentLevel === 1) return <Battery className="w-5 h-5 text-gray-500" />;
+                if (currentLevel === 2) return <Zap className="w-5 h-5 text-yellow-500" />;
+                return <Heart className="w-5 h-5 text-red-500" />;
+            };
+
+            const todayTip = getCurrentDayTip();
+
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 p-4">
+                    <div className="max-w-md mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+                        
+                        {/* Header */}
+                        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 text-white">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-xl font-bold">📚 Estudiante Perezoso</h1>
+                                    <p className="text-sm opacity-90">Inteligentemente motivado</p>
+                                </div>
+                                <div className="text-right">
+                                    <div className="flex items-center gap-2">
+                                        <Trophy />
+                                        <span className="font-bold">{totalPoints}pts</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <Star />
+                                        <span className="text-sm">{studyStreak} días</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tip del día */}
+                        <div className="p-4 bg-blue-50 border-l-4 border-blue-400">
+                            <div className="flex items-center gap-2">
+                                <span className="text-2xl">{todayTip.icon}</span>
+                                <div>
+                                    <h3 className="font-semibold text-blue-800">{todayTip.day}</h3>
+                                    <p className="text-sm text-blue-600">{todayTip.tip}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Selector de nivel */}
+                        <div className="p-6">
+                            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                                {getEnergyLevel()}
+                                ¿Cómo te sientes hoy?
+                            </h2>
+                            <div className="grid grid-cols-1 gap-3">
+                                {Object.entries(levels).map(([key, level]) => (
+                                    <button
+                                        key={key}
+                                        onClick={() => changeLevel(parseInt(key))}
+                                        className={`p-4 rounded-2xl border-2 transition-all duration-200 ${
+                                            currentLevel === parseInt(key) 
+                                                ? level.color + ' border-current shadow-lg transform scale-105' 
+                                                : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                                        }`}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-2xl">{level.icon}</span>
+                                                <div className="text-left">
+                                                    <h3 className="font-semibold">{level.name}</h3>
+                                                    <p className="text-sm text-gray-600">{Math.floor(level.time / 60)} minutos</p>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="text-xs text-gray-500">{level.points} pts</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Timer */}
+                        <div className="p-6">
+                            <div className="text-center mb-6">
+                                <div className="inline-block p-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mb-4">
+                                    <div className="text-4xl font-mono text-white font-bold">
+                                        {formatTime(timeLeft)}
+                                    </div>
+                                </div>
+                                <p className="text-gray-600 mb-2">
+                                    {levels[currentLevel].name} {levels[currentLevel].icon}
+                                </p>
+                            </div>
+
+                            {/* Controles */}
+                            <div className="flex justify-center gap-4 mb-6">
+                                <button
+                                    onClick={isActive ? pauseTimer : startTimer}
+                                    className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                                >
+                                    {isActive ? <Pause /> : <Play />}
+                                    {isActive ? 'Pausar' : 'Empezar'}
+                                </button>
+                                <button
+                                    onClick={resetTimer}
+                                    className="flex items-center gap-2 bg-gray-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                                >
+                                    <RotateCcw />
+                                    Reset
+                                </button>
+                            </div>
+
+                            {/* Tareas del nivel actual */}
+                            <div className="bg-gray-50 rounded-2xl p-4 mb-4">
+                                <h3 className="font-semibold mb-3 flex items-center gap-2">
+                                    <Coffee />
+                                    Tareas de hoy:
+                                </h3>
+                                <ul className="space-y-2">
+                                    {levels[currentLevel].tasks.map((task, index) => (
+                                        <li key={index} className="flex items-center gap-2">
+                                            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                                            <span className="text-sm">{task}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="mt-3 p-3 bg-yellow-100 rounded-lg">
+                                    <p className="text-sm font-medium text-yellow-800">
+                                        🎁 Recompensa: {levels[currentLevel].reward}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Mantra motivacional */}
+                            <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-4 text-center">
+                                <button
+                                    onClick={() => setCurrentMantra((currentMantra + 1) % mantras.length)}
+                                    className="w-full"
+                                >
+                                    <p className="text-sm font-medium text-purple-800 mb-2">💭 Mantra del momento:</p>
+                                    <p className="text-lg font-semibold text-purple-900">
+                                        {mantras[currentMantra]}
+                                    </p>
+                                    <p className="text-xs text-purple-600 mt-2">Toca para cambiar</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Reward Modal */}
+                        {showReward && (
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                                <div className="bg-white rounded-3xl p-8 m-4 text-center animate-bounce">
+                                    <div className="text-6xl mb-4">🎉</div>
+                                    <h2 className="text-2xl font-bold text-purple-800 mb-2">¡Increíble!</h2>
+                                    <p className="text-gray-600 mb-4">
+                                        Completaste tu sesión de {levels[currentLevel].name}
+                                    </p>
+                                    <p className="text-lg font-semibold text-green-600">
+                                        +{levels[currentLevel].points} puntos
+                                    </p>
+                                    <p className="text-sm text-purple-600 mt-2">
+                                        🎁 {levels[currentLevel].reward}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Footer */}
+                        <div className="p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center">
+                            <p className="text-sm opacity-90">
+                                "Tu yo del futuro te va a amar por cada pequeño paso" 💜
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<LazyStudentApp />, document.getElementById('root'));
+    </script>
+</body>
+</html>
